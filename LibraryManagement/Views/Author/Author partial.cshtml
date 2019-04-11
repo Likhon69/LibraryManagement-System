@@ -1,0 +1,35 @@
+﻿@using LibraryManagement.Data.Model;
+@model Author
+<!Doctype html>
+<html>
+     <head>
+
+     </head>
+     <body>
+         <div class="col-sm-4 col-lg-4 col-md-4">
+             <div class="panel panel-primary">
+                 <div class="panel-heading">
+                     <p>@Model.Name</p>
+                 </div>
+                 <div class="panel-body">
+                     <h2>Book Count:@Model.Books?.Count</h2>
+                     <div class="bin-group">
+                         @if (Model.Books?.Count == 0)
+                         {
+                             <a class="btn btn-default" asp-area="">View book list</a>
+                         }
+                         else
+                         {
+                             <a class="btn btn-info" asp-area="" asp-controller="Book" asp-action="List" asp-route-AuthorId="@Model.AuthorId"></a>
+                         }
+
+                         <a class="btn btn-info" asp-area="" asp-controller="Author" asp-action="Update" asp-route-AuthorId="@Model.AuthorId"></a>
+                         <a class="btn btn-info" asp-area="" asp-controller="Auhtor" asp-action="Delete" asp-route-AuthorId="@Model.AuthorId"></a>
+
+                     </div>
+                    
+                 </div>
+             </div>
+         </div>
+     </body>
+</html>

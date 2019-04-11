@@ -1,0 +1,18 @@
+﻿@using LibraryManagement.Data.Model;
+@model IEnumerable<Author>;
+<!Doctype html>
+<html>
+
+<head>
+
+</head>
+<body>
+    <a class="btn btn-success mt-5" style="margin:10px" asp-controller="Customer" asp-action="Create">Create new Customer</a>
+   <div class="row">
+       @foreach(var author in Model)
+       {
+         @Html.Partial("Author partial", author)
+       }
+   </div>
+</body>
+</html>
